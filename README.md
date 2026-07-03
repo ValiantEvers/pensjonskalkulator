@@ -70,9 +70,10 @@ skrevet uten React-avhengigheter slik at den er testbar isolert. Sentrale antake
 
 ### Skattemodell
 
-[`src/lib/tax.ts`](src/lib/tax.ts) er kalibrert mot **2025-satser**: alminnelig inntekt (22 %),
-trygdeavgift (5,1 % på pensjon), trinnskatt (5 brakketter), pensjonsskattefradrag (maks 33 250,
-3-trinns nedtrapping), og ASK beskattet separat som aksjegevinst (37,84 % på gevinst-andelen). Skatten
+[`src/lib/tax.ts`](src/lib/tax.ts) er kalibrert mot **2025-satser**: alminnelig inntekt (22 %, etter
+minstefradrag og personfradrag), trygdeavgift (5,1 % på pensjon, med 25 %-opptrappingsregel over nedre
+grense), trinnskatt (5 brakketter), skattefradrag for pensjonsinntekt (maks 36 000, to-trinns
+nedtrapping), og ASK beskattet separat som aksjegevinst (37,84 % på gevinst-andelen). Skatten
 anvendes på **real** pensjonsinntekt — det forutsetter at skattebraktene justeres med inflasjon, en
 standard antakelse for langsiktig modellering (ellers ville bracket creep dramatisk overestimert
 skatten på nominell verdi i 2063).
