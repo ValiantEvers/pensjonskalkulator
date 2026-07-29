@@ -7,7 +7,9 @@ Norsk pensjonskalkulator (React + TS + Vite, klient-side, ingen backend). Dette 
 - **Produksjonssiden bygger IKKE fra dette repoet.** `www.evers.no/pensjonskalkulator/`
   bygges fra en in-tree-kopi `pensjonskalkulator-src/` i `ValiantEvers.github.io` (egen
   GitHub Actions-workflow). Dette repoet er den frittstående speil-/portefølje-kopien.
-- De to holdes manuelt i synk ved de (~årlige) sats-/G-oppdateringene. **Eneste tilsiktede
+- De to holdes manuelt i synk ved de (~årlige) sats-/G-oppdateringene — **sist synket fra
+  in-tree-kilden 2026-07-04** (2025-satser korrigert + FV-annuitet for negative avkastninger;
+  oppdater datoen her ved neste synk). **Eneste tilsiktede
   forskjell:** `vite.config.ts` her bygger til `dist/`; site-kopien til `../pensjonskalkulator`.
   Ikke «fiks» bort denne forskjellen.
 - Skrifter (Manrope/Fraunces) serveres fra forelder-siten; en standalone-klon faller tilbake
@@ -28,4 +30,5 @@ Norsk pensjonskalkulator (React + TS + Vite, klient-side, ingen backend). Dette 
 ## Bygg / verifisering
 - `npm run build` (Vite), `npm run typecheck`, og `node src/sanity-test.mjs` (forventet:
   brutto 24–34k / netto 22–30k for defaults, realkroner). CI (`ci.yml`) kjører typecheck +
-  sanity-test + build på hver push.
+  sanity-test + build på hver push. Deps vedlikeholdes av delt Renovate-preset
+  (`ValiantEvers/renovate-config`, `renovate.json` siden 2026-07-23).
