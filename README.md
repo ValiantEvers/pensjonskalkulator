@@ -26,7 +26,7 @@ nominal and real kroner, broken down by source, with a tax-adjusted net figure a
   intervall, og kjøres i CI.
 - **Nøye real/nominell-modellering** — all compounding skjer nominelt; deflatering til realkroner kun
   for visning og skatt. Skatt anvendes på realinntekt for å unngå bracket creep over 30+ år.
-- **Norsk skattemodell (2025)** — [`src/lib/tax.ts`](src/lib/tax.ts): alminnelig inntekt, trygdeavgift,
+- **Norsk skattemodell (2026)** — [`src/lib/tax.ts`](src/lib/tax.ts): alminnelig inntekt, trygdeavgift,
   trinnskatt, pensjonsskattefradrag og separat ASK-gevinstbeskatning.
 - **Delbar URL-state** — alle inputs synkes til query-stringen
   ([`src/lib/useUrlState.ts`](src/lib/useUrlState.ts)), så et scenario kan deles via lenke.
@@ -66,13 +66,13 @@ skrevet uten React-avhengigheter slik at den er testbar isolert. Sentrale antake
   annuitet (PMT) med en lavere realavkastning (default 2 %) for å reflektere de-risking.
 - **Privat AFP:** forenklet til 0,8 × G / 12 livsvarig.
 - **Garantipensjon-floor** (1,9 × G/år) anvendes på folketrygd-utbetalingen for lavinntektsbrukere.
-- G per 1. mai 2025 = 130 160 kr (oppdateres årlig i `pension-engine.ts`).
+- G per 1. mai 2026 = 136 549 kr (oppdateres årlig i `pension-engine.ts`).
 
 ### Skattemodell
 
-[`src/lib/tax.ts`](src/lib/tax.ts) er kalibrert mot **2025-satser**: alminnelig inntekt (22 %, etter
+[`src/lib/tax.ts`](src/lib/tax.ts) er kalibrert mot **2026-satser**: alminnelig inntekt (22 %, etter
 minstefradrag og personfradrag), trygdeavgift (5,1 % på pensjon, med 25 %-opptrappingsregel over nedre
-grense), trinnskatt (5 brakketter), skattefradrag for pensjonsinntekt (maks 36 000, to-trinns
+grense), trinnskatt (5 brakketter), skattefradrag for pensjonsinntekt (maks 39 100, to-trinns
 nedtrapping), og ASK beskattet separat som aksjegevinst (37,84 % på gevinst-andelen). Skatten
 anvendes på **real** pensjonsinntekt — det forutsetter at skattebraktene justeres med inflasjon, en
 standard antakelse for langsiktig modellering (ellers ville bracket creep dramatisk overestimert

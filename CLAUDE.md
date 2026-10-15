@@ -7,9 +7,9 @@ Norsk pensjonskalkulator (React + TS + Vite, klient-side, ingen backend). Dette 
 - **Produksjonssiden bygger IKKE fra dette repoet.** `www.evers.no/pensjonskalkulator/`
   bygges fra en in-tree-kopi `pensjonskalkulator-src/` i `ValiantEvers.github.io` (egen
   GitHub Actions-workflow). Dette repoet er den frittstående speil-/portefølje-kopien.
-- De to holdes manuelt i synk ved de (~årlige) sats-/G-oppdateringene — **sist synket fra
-  in-tree-kilden 2026-07-04** (2025-satser korrigert + FV-annuitet for negative avkastninger;
-  oppdater datoen her ved neste synk). **Eneste tilsiktede
+- De to holdes manuelt i synk ved de (~årlige) sats-/G-oppdateringene — **sist synket
+  2026-10-15** (2026-satser inkl. revidert budsjett juni 2026; før det 2026-07-04: 2025-satser
+  korrigert + FV-annuitet for negative avkastninger; oppdater datoen her ved neste synk). **Eneste tilsiktede
   forskjell:** `vite.config.ts` her bygger til `dist/`; site-kopien til `../pensjonskalkulator`.
   Ikke «fiks» bort denne forskjellen.
 - Skrifter (Manrope/Fraunces) serveres fra forelder-siten; en standalone-klon faller tilbake
@@ -22,8 +22,9 @@ Norsk pensjonskalkulator (React + TS + Vite, klient-side, ingen backend). Dette 
 
 ## Modell og årlig vedlikehold
 - All matematikk i `src/pension-engine.ts` (React-fri, testbar isolert). Skattemodell i
-  `src/lib/tax.ts` (2025-satser).
-- **Årlig oppdatering:** `G_DEFAULT` (mai), skattekonstanter (statsbudsjett i desember),
+  `src/lib/tax.ts` (2026-satser).
+- **Årlig oppdatering:** `G_DEFAULT` (mai), skattekonstanter (statsbudsjett i desember, og
+  sjekk revidert budsjett i juni — det endret pensjonsfradraget i 2026),
   delingstall per kohort.
 - Skatt anvendes på **real** inntekt (unngår bracket creep over 30+ år) — ikke endre uten grunn.
 
