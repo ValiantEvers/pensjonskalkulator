@@ -8,7 +8,7 @@ Norsk pensjonskalkulator (React + TS + Vite, klient-side, ingen backend). Dette 
   bygges fra en in-tree-kopi `pensjonskalkulator-src/` i `ValiantEvers.github.io` (egen
   GitHub Actions-workflow). Dette repoet er den frittstående speil-/portefølje-kopien.
 - De to holdes manuelt i synk ved de (~årlige) sats-/G-oppdateringene — **sist synket
-  2026-10-15** (2026-satser inkl. revidert budsjett juni 2026; før det 2026-07-04: 2025-satser
+  2026-10-18** (rolig drakt; satsene 2026-10-15: 2026-satser inkl. revidert budsjett juni 2026; før det 2026-07-04: 2025-satser
   korrigert + FV-annuitet for negative avkastninger; oppdater datoen her ved neste synk). **Eneste tilsiktede
   forskjell:** `vite.config.ts` her bygger til `dist/`; site-kopien til `../pensjonskalkulator`.
   Ikke «fiks» bort denne forskjellen.
@@ -19,6 +19,9 @@ Norsk pensjonskalkulator (React + TS + Vite, klient-side, ingen backend). Dette 
 - Norsk i innhold, engelske identifikatorer. Datoer ISO 8601. Aldri Co-Authored-By-trailer.
 - Commit-prefiks: `feat:` / `fix:` / `docs:` / `chore:`. `git pull --rebase origin main` før push.
 - Caveats er førsteklasses: modellforenklinger står i footer-disclaimer + README.
+- Visuelt: krem-familiens rolige regler (2026-10-17): ingen glød-skyer, fargede skygger,
+  sperrede versaler, inn-animasjoner eller lange tankestreker i synlig tekst. Kilden er
+  `DESIGN.md` i site-repoet, «Calm rules for the cream family».
 
 ## Modell og årlig vedlikehold
 - All matematikk i `src/pension-engine.ts` (React-fri, testbar isolert). Skattemodell i
