@@ -22,6 +22,9 @@ Norsk pensjonskalkulator (React + TS + Vite, klient-side, ingen backend). Dette 
 - Visuelt: krem-familiens rolige regler (2026-10-17): ingen glød-skyer, fargede skygger,
   sperrede versaler, inn-animasjoner eller lange tankestreker i synlig tekst. Kilden er
   `DESIGN.md` i site-repoet, «Calm rules for the cream family».
+- Kontrast (2026-10-18, samme endring i begge kopier): aksent `#FF4E2F` (var `#FF5436`) for store
+  tall og flater, `accent-ink` `#B03418` for liten aksenttekst, `muted` `#766F65` uten
+  `/80`- eller `/70`-varianter. Kilden er `DESIGN.md`, «Contrast in the cream family».
 
 ## Modell og årlig vedlikehold
 - All matematikk i `src/pension-engine.ts` (React-fri, testbar isolert). Skattemodell i
